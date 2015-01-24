@@ -42,4 +42,11 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+/*
+// PROPOSED CODE FOR VIEWING BROWSER SIG WHEN BUILDING AND TESTING IT
+router.post('/browserinfo',function(req,res){
+    console.log(req.body);
+    res.status(200).json({message: 'OK'});
+});
+*/
 module.exports = router;

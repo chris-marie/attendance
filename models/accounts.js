@@ -12,6 +12,15 @@ var Account = new Schema({
         required: 'Email address is required',
         validate: [validateEmail, 'Please fill a valid email address'],
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+    },
+    browserSignature: {  // todo not sure how to integrate
+        type: String,
+        trim: true,
+        unique: true,
+        required: 'Browser signature is required',  // probably not prompt text
+        // validate
+        // match
+        makeSignature: makeBrowserSignature(plugins,userAgent,oscpu,platform)
     }
 });
 
